@@ -49,9 +49,9 @@ Header files for development with %{name}.
 #{_libdir}/libraqm.so.%{api}.*
 
 %files -n %{develname}
-%doc AUTHORS NEWS README*
-%{_includedir}/raqm.h
-%{_includedir}/raqm-version.h
-%{_libdir}/libraqm.so
-%{_libdir}/pkgconfig/raqm.pc
-%{_datadir}/gtk-doc/html/raqm
+#doc AUTHORS NEWS README*
+#{_includedir}/raqm.h
+#{_includedir}/raqm-version.h
+#{_libdir}/libraqm.so
+#{_libdir}/pkgconfig/raqm.pc
+#{_datadir}/gtk-doc/html/raqm
