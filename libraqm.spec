@@ -49,7 +49,7 @@ Header files for development with %{name}.
 %meson_install
 
 %files -n %{libname}
-{_libdir}/libraqm.so.%{api}.*
+#{_libdir}/libraqm.so.%{api}.*
 
 %files -n %{develname}
 #doc AUTHORS NEWS README*
