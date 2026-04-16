@@ -46,11 +46,9 @@ Header files for development with %{name}.
 #------------------------------------------------
 
 %files -n %{libname}
-%license COPYING
 #{_libdir}/libraqm.so.%{api}.*
 
 %files -n %{develname}
-%license COPYING
 %doc AUTHORS NEWS README*
 %{_includedir}/raqm.h
 %{_includedir}/raqm-version.h
