@@ -11,7 +11,6 @@ Summary:	A library for complex text layout
 URL:		https://github.com/HOST-Oman/libraqm
 Source:		https://github.com/HOST-Oman/libraqm/releases/download/v%{version}/raqm-%{version}.tar.xz
 
-BuildOption:  meson
 BuildRequires:	meson
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(freetype2)
@@ -22,8 +21,6 @@ BuildRequires:	pkgconfig(fribidi)
 Library that encapsulates the logic for complex
 text layout and provides a convenient API.
 
-#------------------------------------------------
-
 %package -n	%{libname}
 Summary:	Complex Textlayout Library
 Group:		System/Libraries
@@ -32,21 +29,27 @@ Group:		System/Libraries
 Library that encapsulates the logic for complex
 text layout and provides a convenient API.
 
-#------------------------------------------------
-
 %package -n	%{develname}
 Summary:	Development package for %{name}
 Group:		Development/C++
-Requires:	%{libname} = %{version}-%{release}
-Provides:	raqm-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	raqm-devel = %{EVRD}
 
 %description -n	%{develname}
 Header files for development with %{name}.
 
-#------------------------------------------------
+%prep
+%autosetup -n raqm-%{version} -p1
+
+%build
+%meson -Ddocs=true
+%meson_build
+
+%install
+%meson_install
 
 %files -n %{libname}
-#{_libdir}/libraqm.so.%{api}.*
+{_libdir}/libraqm.so.%{api}.*
 
 %files -n %{develname}
 #doc AUTHORS NEWS README*
