@@ -1,4 +1,4 @@
-%define api		0
+%define api	0
 %define libname		%mklibname raqm
 %define develname	%mklibname raqm -d
 
