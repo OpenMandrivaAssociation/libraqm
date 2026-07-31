@@ -3,7 +3,7 @@
 %define develname	%mklibname raqm -d
 
 Name:		libraqm
-Version:	0.10.5
+Version:	0.11.0
 Release:	1
 License:	MIT
 Group:		System/Libraries
@@ -39,7 +39,7 @@ Provides:	raqm-devel = %{EVRD}
 Header files for development with %{name}.
 
 %prep
-%autosetup -n raqm-%{version} -p1
+%autosetup -n raqm-0.11.0 -p1
 
 %build
 %meson -Ddocs=true
